@@ -1,21 +1,21 @@
+const img = document.querySelectorAll(".slider-img");
+img[0].src = "./images/slide1.jpg";
+img[1].src = "./images/slide2.jpg";
+img[2].src = "./images/slide3.jpg";
+img[3].src = "./images/slide4.png";
 
-const txtSlide1 = document.querySelector('p');
-txtSlide1.innerHTML = 'Impressions tous formats <span>en boutique et en ligne</span>';
-
-const txtSlide2 = document.querySelector('.p1');
-txtSlide2.innerHTML = 'Tirages haute définition grand format <span>pour vos bureaux et events</span>';
-
-const txtSlide3 = document.querySelector('.p2');
-txtSlide3.innerHTML = 'Grand choix de couleurs <span>de CMJN aux pantones</span>'
-
-const txtSlide4 = document.querySelector('.p3');
-txtSlide4.innerHTML = 'Autocollants <span>avec découpe laser sur mesure</span>'
-
+const txtSlides = document.querySelectorAll('p');
+txtSlides[0].innerHTML = 'Impressions tous formats <span>en boutique et en ligne</span>';
+txtSlides[1].innerHTML = 'Tirages haute définition grand format <span>pour vos bureaux et events</span>';
+txtSlides[2].innerHTML = 'Grand choix de couleurs <span>de CMJN aux pantones</span>';
+txtSlides[3].innerHTML = 'Autocollants <span>avec découpe laser sur mesure</span>';
 
 function Slider() {
     const carouselSlides = document.querySelectorAll('.slide');
     const btnPrev = document.querySelector('.prev');
+    btnPrev.src = "./images/arrow_left.png";
     const btnNext = document.querySelector('.next');
+    btnNext.src = "./images/arrow_right.png";
     const dotsSlide = document.querySelector('.dots-container');
     let currentSlide = 0;
 
