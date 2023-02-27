@@ -32,24 +32,24 @@ function Slider() {
 
     btnNext.addEventListener('click', function () {
         currentSlide++; 
-        if (carouselSlides.length - 1 < currentSlide) {
+        if (carouselSlides.length -1 < currentSlide) {
             currentSlide = 0;
         };
-        changeSlide(currentSlide);
+        changeSlide(currentSlide)
         activeDot(currentSlide);
-});
-console.log[btnNext];
+    });
+    console.log[btnNext];
 
     btnPrev.addEventListener('click', function () {
         currentSlide--;
-        if (0 >= currentSlide) {
+        if (0 > currentSlide) {
             currentSlide = 3;
         }; 
         changeSlide(currentSlide);
         activeDot(currentSlide);
     });
     console.log[btnPrev]
-
+    
     dotsSlide.addEventListener('click', function (e) {
         if (e.target.classList.contains('dot')) {
             const slide = e.target.dataset.slide;
