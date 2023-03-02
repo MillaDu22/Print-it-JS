@@ -1,6 +1,7 @@
 
-const slide = document.querySelectorAll(".slider-img"); const tagLine = document.querySelectorAll('p');
-const slides = document.querySelectorAll('.slider')[
+const slide = document.querySelectorAll(".slider-img"); 
+const tagLine = document.querySelectorAll('p');
+const slides = document.querySelector('.slider')[
 
 slide[0].src = "./images/slide1.jpg",
 tagLine[0].innerHTML = 'Impressions tous formats <span>en boutique et en ligne</span>',
