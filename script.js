@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-const slide = document.querySelectorAll('.slider-img')
-const tagLine = document.querySelectorAll('p')
+const slide = document.querySelectorAll('.slider-img');
+const tagLine = document.querySelectorAll('p');
 
 const slides = document.querySelector('.slider')[
   slide[0].src = './images/slide1.jpg', 
@@ -11,50 +11,50 @@ const slides = document.querySelector('.slider')[
   tagLine[2].innerHTML = 'Grand choix de couleurs <span>de CMJN aux pantones</span>',
   slide[3].src = './images/slide4.png',
   tagLine[3].innerHTML = 'Autocollants <span>avec découpe laser sur mesure</span>'
-]
+];
 
 function Slider () {
-  const btnPrev = document.querySelector('.prev')
-  const btnNext = document.querySelector('.next')
-  const dotsSlide = document.querySelector('.dots-container')
-  let currentSlide = 0
+  const btnPrev = document.querySelector('.prev');
+  const btnNext = document.querySelector('.next');
+  const dotsSlide = document.querySelector('.dots-container');
+  let currentSlide = 0;
 
   const activeDot = function (slider) {
     document.querySelectorAll('.dot').forEach((dot) => dot.classList.remove('active'))
     document.querySelector(`.dot[data-slide="${slider}"]`).classList.add('active')
-  }
-  activeDot(currentSlide)
+  };
+  activeDot(currentSlide);
 
   const changeSlide = function (sliders) {
     slide.forEach((slider, index) => (slider.style.transform = `translate(${100 * (index - sliders)}%)`))
     tagLine.forEach((slider, index) => (slider.style.transform = `translate(${100 * (index - sliders)}%)`))
-  }
-  changeSlide(currentSlide)
+  };
+  changeSlide(currentSlide);
 
   btnNext.addEventListener('click', () => {
     currentSlide++
     if (slide.length - 1 < currentSlide) {
       currentSlide = 0
     }
-    changeSlide(currentSlide)
-    activeDot(currentSlide)
-  })
+    changeSlide(currentSlide);
+    activeDot(currentSlide);
+  });
 
   btnPrev.addEventListener('click', () => {
     currentSlide--
     if (currentSlide < 0) {
       currentSlide = 3
     }
-    changeSlide(currentSlide)
-    activeDot(currentSlide)
-  })
+    changeSlide(currentSlide);
+    activeDot(currentSlide);
+  });
 
   dotsSlide.addEventListener('click', (e) => {
     if (e.target.classList.contains('dot')) {
       const { slide } = e.target.dataset
-      changeSlide(slide)
-      activeDot(slide)
+      changeSlide(slide);
+      activeDot(slide);
     }
-  })
-}
-Slider()
+  });
+};
+Slider();
