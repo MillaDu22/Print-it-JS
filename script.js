@@ -30,7 +30,7 @@ function Slider () {
     if (slide.length - 1 < currentSlide) {
       currentSlide = 0;
     };
-  ChangeSlide(currentSlide);
+  ChangeSlide();
   activeDot(currentSlide);
   });
 
@@ -39,7 +39,7 @@ function Slider () {
     if (currentSlide < 0) {
       currentSlide = 3;
   };
-  ChangeSlide(currentSlide);
+  ChangeSlide();
   activeDot(currentSlide);
 });
 
@@ -47,7 +47,7 @@ function Slider () {
     if (e.target.classList.contains('dot')) {
       const {slide} = e.target.dataset; 
       currentSlide = Number(slide); 
-      ChangeSlide(slide); 
+      ChangeSlide(); 
       activeDot(slide);
     }; 
   });
