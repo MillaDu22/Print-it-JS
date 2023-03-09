@@ -1,10 +1,10 @@
-const slide = [ "slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.png"];
+const slide = ["slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.png"];
 
-const tagLine =[
-"Impressions tous formats <span>en boutique et en ligne</span>",
-"Tirages haute définition grand format <span>pour vos bureaux et events</ span>",
-"Grand choix de couleurs <span>de CMJN aux pantones</span>",
-"Autocollants <span>avec découpe laser sur mesure</span>" 
+const tagLine = [
+  "Impressions tous formats <span>en boutique et en ligne</span>",
+  "Tirages haute définition grand format <span>pour vos bureaux et events</ span>",
+  "Grand choix de couleurs <span>de CMJN aux pantones</span>",
+  "Autocollants <span>avec découpe laser sur mesure</span>" 
 ];
 
 function Slider () {
@@ -20,8 +20,8 @@ const activeDot = function (slider) {
 activeDot(currentSlide);
 
 function ChangeSlide(){
-document.getElementById("img").src = "./images/" + slide[currentSlide]; 
-document.getElementById("p").innerHTML =""+ tagLine[currentSlide];
+  document.getElementById("img").src = "./images/" + slide[currentSlide]; 
+  document.getElementById("p").innerHTML =""+ tagLine[currentSlide];
 }; 
 ChangeSlide(currentSlide);
 
