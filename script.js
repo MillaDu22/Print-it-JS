@@ -8,47 +8,47 @@ const tagLine = [
 ];
 
 function Slider () {
-const btnPrev = document.querySelector('.prev');
-const btnNext = document.querySelector('.next');
-const dotsSlide = document.querySelector('.dots-container'); 
-let currentSlide = 0;
+  const btnPrev = document.querySelector('.prev');
+  const btnNext = document.querySelector('.next');
+  const dotsSlide = document.querySelector('.dots-container'); 
+  let currentSlide = 0;
 
-const activeDot = function (slider) { 
-  document.querySelectorAll('.dot').forEach((dot) =>  dot.classList.remove('active')); 
-  document.querySelector(`.dot[data-slide="${slider}"]`).classList.add('active'); 
-};
-activeDot(currentSlide);
+  const activeDot = function (slider) { 
+    document.querySelectorAll('.dot').forEach((dot) =>  dot.classList.remove('active')); 
+    document.querySelector(`.dot[data-slide="${slider}"]`).classList.add('active'); 
+  };
+  activeDot(currentSlide);
 
-function ChangeSlide(){
-  document.getElementById("img").src = "./images/" + slide[currentSlide]; 
-  document.getElementById("p").innerHTML =""+ tagLine[currentSlide];
-}; 
-ChangeSlide(currentSlide);
+  function ChangeSlide(){
+    document.getElementById("img").src = "./images/" + slide[currentSlide]; 
+    document.getElementById("p").innerHTML =""+ tagLine[currentSlide];
+  }; 
+  ChangeSlide();
 
-btnNext.addEventListener('click', () => { 
-  currentSlide++;
-  if (slide.length - 1 < currentSlide) {
-  currentSlide = 0;
-};
-ChangeSlide(currentSlide);
-activeDot(currentSlide);
+  btnNext.addEventListener('click', () => { 
+    currentSlide++;
+    if (slide.length - 1 < currentSlide) {
+      currentSlide = 0;
+    };
+  ChangeSlide(currentSlide);
+  activeDot(currentSlide);
+  });
+
+  btnPrev.addEventListener('click', () => { 
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = 3;
+  };
+  ChangeSlide(currentSlide);
+  activeDot(currentSlide);
 });
 
-btnPrev.addEventListener('click', () => { 
-  currentSlide--;
-  if (currentSlide < 0) {
-  currentSlide = 3;
-};
-ChangeSlide(currentSlide);
-activeDot(currentSlide);
-});
-
-dotsSlide.addEventListener('click', e => { 
-  if (e.target.classList.contains('dot')) {
-  const {slide} = e.target.dataset; 
-  currentSlide = Number(slide); 
-  ChangeSlide(slide); 
-  activeDot(slide);
-}; 
-});
+  dotsSlide.addEventListener('click', e => { 
+    if (e.target.classList.contains('dot')) {
+      const {slide} = e.target.dataset; 
+      currentSlide = Number(slide); 
+      ChangeSlide(slide); 
+      activeDot(slide);
+    }; 
+  });
 }; Slider();
