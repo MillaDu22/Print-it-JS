@@ -30,17 +30,17 @@ function Slider () {
     if (slide.length - 1 < currentSlide) {
       currentSlide = 0;
     }
-  ChangeSlide();
-  activeDot(currentSlide);
+    ChangeSlide();
+    activeDot(currentSlide);
   });
 
   btnPrev.addEventListener('click', () => { 
     currentSlide--;
     if (currentSlide < 0) {
       currentSlide = 3;
-  }
-  ChangeSlide();
-  activeDot(currentSlide);
+    }
+    ChangeSlide();
+    activeDot(currentSlide);
   });
 
   dotsSlide.addEventListener('click', e => { 
