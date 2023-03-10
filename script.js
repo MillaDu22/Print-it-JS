@@ -22,14 +22,14 @@ function Slider () {
   function ChangeSlide(){
     document.getElementById("img").src = "./images/" + slide[currentSlide]; 
     document.getElementById("p").innerHTML =""+ tagLine[currentSlide];
-  }; 
+  }
   ChangeSlide();
 
   btnNext.addEventListener('click', () => { 
     currentSlide++;
     if (slide.length - 1 < currentSlide) {
       currentSlide = 0;
-    };
+    }
   ChangeSlide();
   activeDot(currentSlide);
   });
@@ -38,10 +38,10 @@ function Slider () {
     currentSlide--;
     if (currentSlide < 0) {
       currentSlide = 3;
-  };
+  }
   ChangeSlide();
   activeDot(currentSlide);
-});
+  });
 
   dotsSlide.addEventListener('click', e => { 
     if (e.target.classList.contains('dot')) {
@@ -49,6 +49,7 @@ function Slider () {
       currentSlide = Number(slide); 
       ChangeSlide(); 
       activeDot(slide);
-    }; 
+    }
   });
-}; Slider();
+}
+Slider();
